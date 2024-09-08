@@ -1,0 +1,812 @@
+* { 
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'IRANYekan', sans-serif;
+}
+body {
+    background-color: #000000;
+}
+
+/* util classes */
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* util classes */
+nav {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(180deg, #121212 0%, rgba(18, 18, 18, 0.0001) 99.86%);
+    padding: 1.5rem;
+}
+
+
+.menu-items {
+    display: flex;
+    list-style-type: none;
+    color: #FFFFFF;
+    justify-content: start;
+    font-size: 0.625rem;
+    padding: 0;
+}
+
+
+.intro {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    color: #FFFFFF;
+    margin-bottom: 2rem;
+}
+
+
+.menu-items > li {
+    margin: 0 1rem;
+}
+
+
+
+.intro-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.intro-title {
+    margin: 1rem auto;
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+.intro-description {
+    text-align: center;
+    color: #AAAAAA;
+    font-size: 0.75rem;
+    margin: 0 1rem;
+    font-weight: 300;
+}
+
+#namava-tv-console-control {
+    width: 100%;
+}
+
+.plans {
+    display: flex;
+    flex-direction: column;
+}
+.subscription {
+    display: flex;
+    margin-bottom: 2rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.namava-subscription {
+    display: flex;
+    flex-direction: column;
+    color: #FFFFFF;
+    width: 50%;
+}
+
+
+.namava-subscription > img {
+    width: 100%;
+}
+.namava-subscription-text {
+    margin: 1rem auto;
+}
+.namava-subscription-price {
+    text-decoration: line-through;
+    text-decoration-color: red;
+    text-align: center;
+}
+
+
+.shatel-subscription {
+    display: flex;
+    flex-direction: column;
+    color: #FFFFFF;
+    width: 50%;
+}
+.shatel-subscription > img {
+    width: 100%;
+}
+.shatel-subscription-text {
+    margin: 1rem auto;
+}
+.shatel-subscription-price {
+    text-decoration: line-through;
+    text-decoration-color: red;
+    text-align: center;
+}
+.receipt {
+    margin-bottom: 3rem;
+}
+.receipt-prices {
+    background-color: #121212;
+    margin: 0 1rem;
+    color: #FFFFFF;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.25rem;
+}
+.receipt-primitive-price {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.receipt-primitive-price .primitive-text {
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+.receipt-primitive-price .primitive-price {
+    text-decoration: line-through;
+    font-size: 0.75rem;
+    text-decoration-color: red;
+}
+
+.receipt-discount-price {
+    margin-bottom: 1rem; 
+}
+
+
+.receipt-discount-price .dicount-text {
+    background-color: #D95C5C;
+    color: #FFFFFF;
+    padding: 0.25rem 1.5rem;
+    font-size: 0.625rem;
+    font-weight: 700;
+    border-radius: 0.25rem;
+}
+
+.receipt-discount-price .dicount-price {
+    font-size: 0.75rem;
+}
+.receipt-offer-price {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+.receipt-offer-price .offer-text {
+    
+}
+.receipt-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.75rem;
+    background-color: #FFFFFF;
+    margin: 0 1rem;
+    border: 1px;
+    border-radius: 0.25rem;
+}
+
+.receipt-button-text {
+    font-size: 0.75rem;
+    margin-left: 0.5rem;
+}
+
+.receipt-button-img{
+    width: 4.375rem;
+    height: 1rem;
+}
+.namava-tv-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.namava-tv-intro .intro-img {
+    width: 100%;
+}
+
+.namava-tv-intro .intro-content{
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.namava-tv-intro .intro-content .intro-text {
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: #AAAAAA;
+    padding: 2rem;
+}
+
+.description .namava-tv-video {
+    width: 100%;
+    margin-bottom: 4rem;
+}
+
+.description .config-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #FFFFFF;
+    font-size: 0.75rem;
+    margin-bottom: 6rem;
+}
+.description .config-info > div {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    width: 50%;
+    justify-content: center ;   
+}
+
+.resolution-icon {
+    margin: auto;
+    width: 7.5rem;
+    height: 7.5rem;
+}
+.resolution-text {
+    margin: auto;
+}
+
+.ram-icon {
+    margin: auto;
+    width: 7.5rem;
+    height: 7.5rem;
+}
+.ram-text {
+    margin: auto;
+}
+
+.cpu-icon {
+    margin: auto;
+    width: 7.5rem;
+    height: 7.5rem;
+}
+.cpu-text {
+    margin: auto;
+}
+
+.wireless-icon {
+    margin: auto;
+    height: 7.5rem;
+    width: 7.5rem;
+}
+.wireless-text {
+    margin: auto;
+}
+
+.namava-tv-remote .remote {
+    width: 44vw;
+    margin-bottom: 2rem;
+}
+
+.namava-tv-remote {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;        
+}
+.namava-tv-remote .remote-title {
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 700;
+
+}
+.namava-tv-remote .remote-text {
+    color: #AAAAAA;
+    font-size: 12px;
+    font-weight: 300;
+    margin: 2rem 1rem;
+}
+
+.android-tv {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;        
+}
+
+.android-tv .android-img {
+    width: 100%;
+}
+
+.android-title {
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 2rem 1rem;
+
+}
+.android-text {
+    color: #AAAAAA;
+    font-size: 12px;
+    font-weight: 300;
+    margin: 0 1rem 4rem;
+}
+
+.online-watch {
+    display: flex;
+    flex-direction: column;
+}
+.online-content .online-img {
+    width: 100%;
+}
+.online-watch .online-content {
+    text-align: center;
+    margin: 2rem;
+}
+.online-watch .online-title {
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 2rem;
+}
+.online-watch .online-text {
+    color: #AAAAAA;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.tv-info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom:96px;
+}
+.info-title {
+    margin: 32px auto;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 700;
+}
+.info-table {
+    display: flex;
+    flex-direction: column;
+    background-color: #121212;
+    padding: 16px 16px 32px;
+}
+.info-table > ul > li {
+    list-style-type: none;
+    margin: 16px 0;
+}
+.column-title {
+    color: #FFFFFF;
+    font-size: 14px;
+}
+.column-text {
+    color: #AAAAAA;
+    font-size: 14px;
+    font-weight: 300;
+}
+.more-info {
+    display: flex;
+    color: #6EB8FF;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 700;
+}
+.more-info .chevron-down {
+    width: 20px;
+    height: 20px;
+}
+.column {
+    margin-bottom: 2rem;
+}
+
+.hide-mobile {
+    transition: 0.4s;
+    display: none;
+    max-height: 0;
+}
+
+
+.chevron-down.open {
+    transform: rotate(180deg);
+}
+
+.FAQ {
+    background-color: #121212;
+}
+
+.FAQ-title {
+    background-color: #000000;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+    padding: 32px 0;
+}
+
+
+
+.accordion-FAQ {
+    background-color: #121212;
+    color: #CCCCCC;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: 0;
+    font-size: 12px;
+    transition: 0.4s;
+    text-align: right;  
+    display: flex;
+    justify-content: space-between;
+}
+  
+.active, .accordion-FAQ:hover {
+    background-color: #121212;
+    border-bottom: none;
+}
+.accordion-FAQ > img {
+    width: 20px;
+    bg: #CCCCCC;
+}
+.active > img {
+    transform: rotate(180deg);
+}
+.panel-FAQ {
+    padding: 0 18px;
+    background-color: #121212;
+    color: #CCCCCC;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    border: 0;
+    border-bottom: 1px solid #37383E;
+    font-size: 10px;
+    font-weight: 300;
+    margin: 0 16px;
+}
+
+.panel-FAQ > p {
+    margin-bottom: 16px ;
+}
+
+
+.plans-img {
+    width: 100%;
+}
+
+.last-box .subscription #namava-subscription   {
+    width: 170px;
+    margin: auto;
+}
+.last-box .subscription #shatel-subscription   {
+    width: 170px;
+    margin: auto;
+}
+
+
+@media only screen and (min-width: 640px) {
+    .namava-logo {
+        padding-right: 2rem;
+    }
+
+    .menu-items {
+        font-size: 0.75rem;
+        padding-right: 1rem;
+    }
+    .intro-title {
+        font-size: 1rem;
+    }
+    .intro-description {
+        margin: 0 2rem;
+        font-size: 0.875rem;
+    }
+    .plans {
+        padding: 0 3rem;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 3rem;
+    }
+    .subscription {
+        flex-direction: column;
+        width: 10.625rem;
+    }
+    .namava-subscription {
+        width: 10.625rem;
+    }
+    .shatel-subscription {
+        width: 10.625rem;
+    }
+    .receipt {
+        width: 57vw;
+    }
+    .namava-tv-intro .intro-img {
+        width: 87.5vw;
+    }
+    .description .config-info {
+        font-size: 0.875rem;
+    }
+
+
+    .resolution-icon {
+        width: 9.375rem;
+        height: 9.375rem;
+    }
+    .ram-icon {
+        width: 9.375rem;
+        height: 9.375rem;
+    }
+    .cpu-icon {
+        height: 9.375rem;
+    }
+    .wireless-icon {
+        height: 9.375rem;
+        width: 9.375rem;
+    }
+    .namava-tv-remote {
+        flex-direction: row-reverse;
+        margin: 2rem;
+    }
+    .namava-tv-remote .remote {
+        width: 27.5vw;
+    }
+    .namava-tv-remote .remote-content {
+        text-align: right;
+    }
+    .namava-tv-remote .remote-title {
+        font-size: 16px;
+        margin-right: 16px;
+    }
+    .namava-tv-remote .remote-text {
+        font-size: 14px;
+    }
+    .android-tv .android-content {
+        margin: 0 8rem;
+    }
+    .android-title {
+        color: #FFFFFF;
+        font-size: 16px;
+    
+    }
+    .android-text {
+        color: #AAAAAA;
+        font-size: 14px;
+    }
+
+
+    .online-watch .online-title {
+        font-size: 16px;
+    }
+    .online-watch .online-text {
+        width: 60vw;
+        margin: auto;
+        font-size: 14px;
+    }
+
+    .info-title {
+        font-size: 16px;
+    }
+    .info-table {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .info-table > ul {
+        width: 50%;
+    }
+    .hide-mobile {
+        display: flex;
+        flex-direction: column;
+    }
+    .hide-middle {
+        display: none;
+    }
+
+    .accordion-FAQ {
+        padding: 18px;
+        font-size: 14px;
+    }
+    .panel-FAQ {
+        font-size: 12px;
+    }
+    .FAQ-title {
+        font-size: 16px;
+    }
+
+
+
+    .last-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .plans-footer .subscription {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 55vw;
+    }
+
+    .last-box .subscription #namava-subscription   {
+        width: 150px;
+    }
+    .last-box .subscription #shatel-subscription   {
+        width: 150px;
+    }
+}
+
+
+
+
+
+@media only screen and (min-width: 1280px) {
+    .intro {
+        flex-direction: row;
+        justify-content: center;
+        padding: 2rem 3.5rem;
+    }
+    .intro-content {
+        padding-right: 2rem;
+        width: 30rem;
+    }
+    .intro-title {
+        margin-right: 2rem;
+        text-align: right;
+        font-size: 1.25rem;
+    }
+    .intro-description {
+        text-align: right;  
+        font-size: 1rem;
+    }
+    .plans {
+        justify-content: center;
+    }
+    .receipt {
+        width: 26rem;
+        margin-right: 4rem;
+    }
+    #namava-tv-console-control {
+        width: 36.25rem;
+    }
+    .subscription {
+        flex-direction: row;
+        width: 30rem;
+    }
+    .namava-subscription {
+        width: 25rem;
+    }
+    .shatel-subscription {
+        width: 25rem;
+    }
+    .namava-tv-intro .intro-img {
+        width: 48.75rem;
+    }
+
+    .namava-tv-intro .intro-content{
+        width: 48.75rem;
+    }
+    .namava-tv-intro .intro-content .intro-title{
+        margin: auto;
+    }
+    .description .video-box {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+    .description .namava-tv-video {
+        width: 61.25rem;
+    }
+    .description .config-info {
+        font-size: 1rem;
+        font-weight: 400;
+    }
+    .description .config-info > div {
+        width: auto;
+        margin: 2.5rem;
+    }
+    .namava-tv-remote {
+        text-align: right;
+        justify-content: center;
+    }
+    .namava-tv-remote .remote {
+        width: 280px;
+    }
+    .namava-tv-remote .remote-title {
+        font-size: 20px;
+    }
+    .namava-tv-remote .remote-text {
+        font-size: 16px;
+        width: 480px;
+    }
+    .android-tv {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .android-tv .android-content {
+        margin: 0;
+        text-align: right;
+        width: 480px;
+    }
+    .android-tv .android-img {
+        width: 630px;
+    }
+    .android-tv .android-title {
+        font-size: 20px;
+    }
+    .android-tv .android-text {
+        font-size: 16px;
+    }
+
+    .online-watch .online-title {
+        font-size: 20px;
+    }
+    .online-watch .online-text {
+        width: 52vw;
+        font-size: 16px;
+    }
+
+
+    .info-title {
+        font-size: 20px;
+    }
+
+    .info-table {
+        margin: 48px;
+        width: 1180px;
+        margin: auto;
+    }
+    .info-table > ul {
+        margin-top: 16px;
+        width: 23%;
+    }
+    .column {
+        margin-left: 16px;
+        border-left: 1px solid #37383E;
+    }
+    .last-column{
+        border-left: none;
+    }
+
+    .more-info {
+        display: none;
+    }
+    
+    .hide-middle {
+        display: flex;
+    }
+    .info-table .column;
+
+    .more-info {
+        display: none;
+    }
+
+    .FAQ {
+        width: 780px;
+        margin: auto;
+    }
+    .FAQ-title {
+        font-size: 20px;
+    }
+
+    
+      
+
+
+
+
+    .last-box {
+        flex-direction: row-reverse;
+        justify-content: center;
+        margin-top: 32px;
+    }
+    .plans-img {
+        width: 578px;
+    }
+    .plans-footer {
+        margin-left: 32px;
+    }
+    .plans-footer .subscription {
+        flex-direction: row;
+        width: 480px;
+    }
+    .last-box .subscription #namava-subscription   {
+        width: 240px;
+    }
+    .last-box .subscription #shatel-subscription   {
+        width: 240px;
+    }
+    .plans-footer .receipt {
+        margin: auto;
+    }
+}
+
+
+
+

@@ -100,6 +100,7 @@ nav {
 }
 .namava-subscription-price {
     text-decoration: line-through;
+    text-decoration-thickness: 2px;
     text-decoration-color: red;
     text-align: center;
 }
@@ -120,6 +121,7 @@ nav {
 .shatel-subscription-price {
     text-decoration: line-through;
     text-decoration-color: red;
+    text-decoration-thickness: 2px;
     text-align: center;
 }
 .receipt {
@@ -146,6 +148,7 @@ nav {
     text-decoration: line-through;
     font-size: 0.75rem;
     text-decoration-color: red;
+    text-decoration-thickness: 2px;
 }
 
 .receipt-discount-price {
@@ -390,10 +393,12 @@ nav {
     margin-bottom: 2rem;
 }
 
-.hide-mobile {
-    transition: 0.4s;
-    display: none;
-    max-height: 0;
+@media only screen and (min-width: 360px) and (max-width: 640px) {
+    .hide-mobile {
+        transition: 0.4s;
+        display: none;
+        max-height: 0;
+    }
 }
 
 
@@ -463,7 +468,9 @@ nav {
 .plans-img {
     width: 100%;
 }
-
+.last-box {
+    margin-bottom: 32px;
+}
 .last-box .subscription #namava-subscription   {
     width: 170px;
     margin: auto;
@@ -740,17 +747,22 @@ nav {
     .info-table {
         margin: 48px;
         width: 1180px;
+        height: 406px;
         margin: auto;
     }
     .info-table > ul {
         margin-top: 16px;
         width: 23%;
     }
-    .column {
+ 
+    .info-table > ul > li {
+        margin: 8px 0;
+    }
+    .info-table .column {
         margin-left: 16px;
         border-left: 1px solid #37383E;
     }
-    .last-column{
+    .column:last-of-type {
         border-left: none;
     }
 
@@ -761,7 +773,6 @@ nav {
     .hide-middle {
         display: flex;
     }
-    .info-table .column;
 
     .more-info {
         display: none;

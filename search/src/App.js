@@ -1,14 +1,15 @@
-import './App.css';
-import NavBar from './components/NavBar';
-import SearchPage from './pages/searchPage';
+import React from 'react'
+import './App.css'
+import NavBar from './components/NavBar'
+import SearchPage from './pages/searchPage'
 
-function App() {
+function App () {
   return (
     <div className="App">
       <NavBar/>
       <SearchPage />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

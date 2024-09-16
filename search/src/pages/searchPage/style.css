@@ -1,5 +1,6 @@
 .searchPage {
     padding: 24px 32px;
+    height: 100vh;
 }
 .inputs {
     display: flex;

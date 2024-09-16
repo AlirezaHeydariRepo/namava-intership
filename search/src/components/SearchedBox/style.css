@@ -1,0 +1,9 @@
+.search-box {
+    padding-right: 300px;
+    display: flex;
+}
+@media screen and (min-width: 1280px){
+    .search-box {
+        padding-right: 327px;
+    }
+}

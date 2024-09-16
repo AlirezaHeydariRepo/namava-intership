@@ -1,7 +1,7 @@
-import React from 'react';
-import './style.css';
+import React from 'react'
+import './style.css'
 
-export default function NavBar() {
+export default function NavBar () {
   return (
     <nav>
       NavBar

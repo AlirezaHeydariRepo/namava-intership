@@ -1,0 +1,17 @@
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 204px;
+}
+.empty-image {
+    margin: auto;
+    width: 140px;
+    height: 140px;
+    margin-bottom: 16px;
+}
+.empty-text {
+    text-align: center;
+    color: #AAAAAA;
+    font-size: 14px;
+}

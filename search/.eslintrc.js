@@ -34,6 +34,7 @@ module.exports = {
     }
   },
   rules: {
+    'react/prop-types': 'off',
     semi: [
       'error',
       'never'

@@ -1,5 +1,6 @@
 import React from 'react'
 import notFoundImage from '../../../../assets/images/not-found.png'
+
 export default function NotFound () {
   return (
     <div className='not-found'>

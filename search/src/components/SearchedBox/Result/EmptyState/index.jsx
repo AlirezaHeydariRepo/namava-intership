@@ -1,6 +1,7 @@
 import React from 'react'
 import emptyStateImage from '../../../../assets/images/empty-state.png'
 import './style.css'
+
 export default function EmptyState () {
   return (
     <div className='empty-state'>

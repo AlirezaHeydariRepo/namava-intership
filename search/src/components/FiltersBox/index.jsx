@@ -1,48 +1,43 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import './style.css'
-FilterBox.propTypes = {
-  type: PropTypes.string,
-  setType: PropTypes.any
-}
+import CheckBox from './CheckBox'
 export default function FilterBox (props) {
-  const isActive = (newType) => {
-    if (props.type === '') {
-      props.setType(newType)
-    } else if (props.type === newType) {
-      props.setType('')
-    } else if (newType === 'movie') {
-      if (props.type === 'all') {
-        props.setType('series')
-      } else {
-        props.setType('all')
+  const { type, setType } = props
+  const isMovieSelected = (type === 'movie' || type === 'all')
+  const isSeriesSelected = (type === 'series' || type === 'all')
+
+  const changeType = (selectedType) => {
+    if (type === '') {
+      setType(selectedType)
+    } else if (type === selectedType) {
+      setType('')
+    } else if (type === 'all') {
+      if (selectedType === 'movie') {
+        setType('series')
+      } else if (selectedType === 'series') {
+        setType('movie')
       }
-    } else if (newType === 'series') {
-      if (props.type === 'all') {
-        props.setType('movie')
-      } else {
-        props.setType('all')
-      }
+    } else {
+      setType('all')
     }
   }
+
   return (
     <div className='filter-box'>
       <div className="filter-title">فیلترها</div>
       <div className="filters">
-        <span
-          className={`container ${props.type === 'all' || props.type === 'movie' ? 'movie' : ''}`}
-          onClick={() => isActive('movie')}>
-          <span className="text">فیلم</span>
-          <input type="checkbox" checked={props.type === 'all' || props.type === 'movie' ? 'checked' : ''}/>
-          <span className="checkmark"></span>
-        </span>
-        <span
-          className={`container ${props.type === 'all' || props.type === 'series' ? 'series' : ''}`}
-          onClick={() => isActive('series')}>
-          <span className="text">سریال</span>
-          <input type="checkbox" checked={props.type === 'all' || props.type === 'series' ? 'checked' : ''}/>
-          <span className="checkmark"></span>
-        </span>
+        <CheckBox
+          label={'فیلم'}
+          onClick={() => changeType('movie')}
+          value={isMovieSelected}
+          className={isMovieSelected ? 'movie' : ''}
+        />
+        <CheckBox
+          label={'سریال'}
+          onClick={() => changeType('series')}
+          value={isSeriesSelected}
+          className={isSeriesSelected ? 'series' : ''}
+        />
       </div>
     </div>
   )

@@ -3,6 +3,7 @@
     flex-direction: column;
     width: 400px;
     height: 204px;
+    margin-top: 80px;
 }
 .empty-image {
     margin: auto;

@@ -18,7 +18,6 @@ export default function InputBox (props) {
         onChange={(e) => getInput(e.target.value)}
         value={query}
       />
-      <img src="" alt="" />
     </div>
   )
 }

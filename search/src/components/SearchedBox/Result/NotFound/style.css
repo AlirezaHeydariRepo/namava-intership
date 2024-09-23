@@ -2,14 +2,18 @@
     display: flex;
     flex-direction: column;
     width: 400px;
+    margin-top: 80px;
     height: 180px;
 }
-.not-found-image {
+.no-found-image {
     width: 140px;
     height: 140px;
-    margin: auto;
+    margin: 0 auto 16px;
+
 }
-.not-found-text {
+.no-found-text {
     text-align: center;
     margin: auto;
+    color: #AAAAAA;
+    font-size: 14px;
 }

@@ -5,18 +5,30 @@ import NotFound from './Result/NotFound'
 import SearchResult from './Result/SearchResult'
 
 export default function SearchedBox (props) {
-  const { totalCount = 0, query, data } = props
+  const { query, data, page, totalPages, setPage, loading, fethcData, type } = props
+
   let view = 'empty'
-  if (totalCount > 0) {
+  if (totalPages > 0 && query) {
     view = 'result'
   } else if (!query) {
     view = 'empty'
   } else {
     view = 'not-found'
   }
+
   return (
     <div className='search-box'>
-      { view === 'result' && <SearchResult data={data}/>}
+      { view === 'result' &&
+      <SearchResult
+        data={data}
+        page={page}
+        totalPages={totalPages}
+        setPage={setPage}
+        loading={loading}
+        fethcData={fethcData}
+        query={query}
+        type={type} />
+      }
       { view === 'empty' && <EmptyState />}
       { view === 'not-found' && <NotFound />}
     </div>

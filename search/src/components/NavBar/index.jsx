@@ -1,9 +1,9 @@
 import React from 'react'
 import './style.css'
 import Logo from '../../assets/images/logo.png'
-import avatar from '../../assets/images/avatar.png'
-import email from '../../assets/images/email.png'
-import search from '../../assets/images/search.png'
+import avatar from '../../assets/images/avatar.svg'
+import email from '../../assets/images/email.svg'
+import search from '../../assets/images/search.svg'
 
 export default function NavBar () {
   const navItems = [

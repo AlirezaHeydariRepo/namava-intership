@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import './style.css'
-import searchIcon from '../../assets/images/search.png'
+import searchIcon from '../../assets/images/search.svg'
 
 export default function InputBox (props) {
   // eslint-disable-next-line no-unused-vars

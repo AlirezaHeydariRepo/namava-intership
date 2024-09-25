@@ -1,10 +1,6 @@
 .search-box {
-    padding-right: 300px;
     display: flex;
     justify-content: center;
+    /* margin: auto; */
 }
-@media screen and (min-width: 1280px){
-    .search-box {
-        padding-right: 327px;
-    }
-}
+

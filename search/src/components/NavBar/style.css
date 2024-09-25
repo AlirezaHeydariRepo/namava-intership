@@ -1,3 +1,68 @@
 nav {
+    margin: 15px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.namava-logo {
+    width: 48px;
+    height: 24px;
+    margin-left: 22px;
+}
+nav > .titles {
+    display: flex;
+    align-items: center;
+}
+
+.title-url {
+    cursor: pointer;
+    font-size: 12px;
+    margin: 0 9px;
+    text-decoration: none;
+}
+
+.title-text {
     color: #FFFFFF;
+}
+.title-text:hover {
+    color: #6eb8ff;
+}
+.icons {
+    display: flex;
+    align-items: center;
+}
+.icons :first-child {
+    margin-left: 20px;
+    width: 30px;
+    height: 30px;
+}
+.icons :last-child {
+    margin-right: 20px;
+}
+
+
+@media screen and (min-width: 1280px) {
+    nav {
+        margin: 20px 42px;
+    }
+    .title-url {
+        margin: 0 16px;
+    }
+    .namava-logo {
+        width: 64px;
+        height: 32px;
+        margin-left: 34px;
+    }
+    .icons > img {
+        width: 40px;
+        height: 40px;
+    }
+}
+@media screen and (min-width: 1920px) {
+    nav {
+        margin: 30px 56px;
+    }
+    .title-url {
+        font-size: 14px;
+    }
 }

@@ -1,6 +1,0 @@
-.search-result {
-    display: flex;
-    flex-wrap: wrap;
-    overflow: scroll;
-    height: 70vh;
-}

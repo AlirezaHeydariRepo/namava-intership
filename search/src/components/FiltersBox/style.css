@@ -8,22 +8,30 @@
     display: flex;
     flex-direction: column;
     border-radius: 6px;
+    position: fixed;
+    top: 84px;
 }
 
 .filter-title {
     margin-bottom: 20px;
 }
+
 .filters {
     display: flex;
 }
 
 
-@media screen and (min-width: 1280px){
+@media screen and (min-width: 1280px) {
     .filter-box {
         width: 307px;
+        top: 104px;
+
     }
 }
 
-@media screen and (min-width: 1920px){
-    
+@media screen and (min-width: 1920px) {
+    .filter-box {
+    top: 124px;
+
+    }
 }

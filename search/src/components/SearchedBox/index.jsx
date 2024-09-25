@@ -1,8 +1,8 @@
 import React from 'react'
 import './style.css'
-import EmptyState from './Result/EmptyState'
-import NotFound from './Result/NotFound'
-import SearchResult from './Result/SearchResult'
+import EmptyState from './EmptyState'
+import NotFound from './NotFound'
+import SearchResult from './SearchResult'
 
 export default function SearchedBox (props) {
   const { query, data, page, totalPages, setPage, loading, fethcData, type } = props

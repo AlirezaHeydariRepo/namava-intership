@@ -6,7 +6,9 @@ export default function Card (props) {
 
   return (
     <a className='card' href={url}>
-      <img className='card-image' src={imageUrl} alt={`image ${name}`}/>
+      <div className='placeholder'>
+        <img className='card-image' src={imageUrl} alt={`image ${name}`}/>
+      </div>
       <span className='card-text'>{name}</span>
     </a>
   )

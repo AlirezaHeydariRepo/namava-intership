@@ -1,8 +1,21 @@
-.searchPage {
+.search-page {
     padding: 24px 32px;
     min-height: 100vh;
     overflow-y: auto;
+    display: flex;
 }
 .inputs {
     display: flex;
+    flex-direction: column;
+    padding-right: 300px;
+    width: 100%;
+}
+
+@media screen and (min-width: 1280px) {
+    .searchPage {
+        padding: 24px 42px;
+    }
+    .inputs {
+        padding-right: 347px;
+    }
 }

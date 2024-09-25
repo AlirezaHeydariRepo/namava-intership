@@ -27,7 +27,7 @@ export default function SearchPage () {
 
   const fethcData = (currType, currQuery, currPage) => {
     setLoading(true)
-    // console.log('query', currQuery)
+    console.log('query', currQuery)
 
     if (currQuery) {
       axios.get(`https://www.namava.ir/api/v5.0/search/advance?type=${currType}&count=20&page=${currPage}&query=${currQuery}`)
@@ -71,29 +71,30 @@ export default function SearchPage () {
   }, [type, query])
 
   return (
-    <div className="searchPage">
+    <div className="search-page">
+      <FiltersBox
+        type={type}
+        setSearchParams={setSearchParams}
+        setType={setType}
+      />
       <div className="inputs">
-        <FiltersBox
-          type={type}
-          setSearchParams={setSearchParams}
-          setType={setType}
-        />
         <InputBox
           query={query}
           setQuery={setQuery}
           setSearchParams={setSearchParams}
         />
+        <SearchedBox
+          data={data}
+          query={query}
+          page={page}
+          totalPages={totalPages.current}
+          setPage={setPage}
+          loading={loading}
+          fethcData={fethcData}
+          type={type}
+        />
       </div>
-      <SearchedBox
-        data={data}
-        query={query}
-        page={page}
-        totalPages={totalPages.current}
-        setPage={setPage}
-        loading={loading}
-        fethcData={fethcData}
-        type={type}
-      />
+
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import './style.css'
 import InputBox from '../../components/InputBox'
 import SearchedBox from '../../components/SearchedBox'
@@ -13,7 +13,7 @@ export default function SearchPage () {
   const [type, setType] = useState(searchParams.get('type') || '')
   const [page, setPage] = useState(1)
   const [loading, setLoading] = useState(false)
-  const totalPages = useRef(0)
+  const [totalPages, setTotalPages] = useState(null)
   const changeParams = () => {
     const allFilters = { query, type }
     const filtersWithValue = {}
@@ -26,8 +26,9 @@ export default function SearchPage () {
   }
 
   const fethcData = (currType, currQuery, currPage) => {
+    console.log(currType, currQuery, currPage, 'params')
+
     setLoading(true)
-    console.log('query', currQuery)
 
     if (currQuery) {
       axios.get(`https://www.namava.ir/api/v5.0/search/advance?type=${currType}&count=20&page=${currPage}&query=${currQuery}`)
@@ -49,7 +50,7 @@ export default function SearchPage () {
           const Media = groups.Media || {} // Handle potential missing Media
           const { items = [], total = 0 } = Media // Destructure with default values
 
-          totalPages.current = (total / 20) === parseInt(total / 20) ? (total / 20) : parseInt((total / 20) + 1)
+          setTotalPages(total / 20)
           // console.log(`total page ${totalPages.current}`)
 
           if (currPage > 1) {
@@ -67,6 +68,7 @@ export default function SearchPage () {
     if (!query) {
       setData([])
     }
+    setTimeout(() => window.scrollTo(0, 0), 0)
     fethcData(type, query, 1)
   }, [type, query])
 
@@ -87,7 +89,7 @@ export default function SearchPage () {
           data={data}
           query={query}
           page={page}
-          totalPages={totalPages.current}
+          totalPages={totalPages}
           setPage={setPage}
           loading={loading}
           fethcData={fethcData}

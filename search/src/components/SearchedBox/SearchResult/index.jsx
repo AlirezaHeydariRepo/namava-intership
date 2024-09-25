@@ -16,11 +16,12 @@ export default function SearchResult (props) {
     // console.log('page', page)
     // console.log('waypoint', page)
     const currPage = page + 1
+    console.log(currPage, 'currPage')
     fethcData(type, query, currPage)
     setPage(currPage)
   }
 
-  console.log(page < totalPages, loading)
+  console.log(page < totalPages, loading, totalPages, page)
 
   return (
     <div className='search-result'>
@@ -47,7 +48,7 @@ export default function SearchResult (props) {
       )
       }
       {(page < totalPages) && (
-        <Waypoint onEnter={loadMoreData} bottomOffset={'-60%'}/>)
+        <Waypoint onEnter={loadMoreData} bottomOffset={'-30%'}/>)
       }
     </div>
   )

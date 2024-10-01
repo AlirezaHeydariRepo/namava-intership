@@ -1,0 +1,22 @@
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+.namavaLogo {
+    width: 64px;
+    height: 32px;
+}
+.signInBtn {
+    display: flex;
+    width: 80px;
+    height: 42px;
+    font-size: 12px;
+    font-weight: 700;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF33;
+    border-radius: 5px;
+}

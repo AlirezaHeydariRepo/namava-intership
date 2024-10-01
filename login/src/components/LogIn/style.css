@@ -1,0 +1,101 @@
+.logIn {
+    display: flex;
+    flex-direction: column;
+}
+
+.logIn .title {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+.logIn .description {
+    font-size: 12px;
+    color: #AAAAAA;
+    margin-bottom: 28px;
+}
+.email {
+    display: flex;
+    flex-direction: column;
+}
+.emailTitle {
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+.emailInput {
+    font-size: 12px;
+    color: #FFFFFF;
+    background: #FFFFFF33;
+    border: none;
+    border-radius: 5px;
+    padding: 16px 12px;
+    margin-bottom: 10px;
+}
+.emailInput:focus-visible {
+    outline: none;
+}
+.password {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    
+}
+.passwordTitle {
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+.passwordContent {
+    height: 52px;
+    display: flex;
+    background: #FFFFFF33;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+}
+.passwordIcon {
+    width: 24px;
+    height: 24px;
+}
+.passwordInput {
+    font-size: 12px;
+    color: #FFFFFF;
+    background: transparent;
+    border: none;
+    width: 100%;
+}
+.passwordInput:focus-visible {
+    outline: none;
+}
+.logInBtn {
+    font-size: 14px;
+    font-weight: 700;
+}
+.logInBtn {
+    display: flex;
+    justify-content: center;
+    padding: 9px;
+    font-size: 14px;
+    font-weight: 700;
+    background: #FFFFFF33;
+    border-radius: 5px;
+    margin-bottom: 38px;
+}
+.logInBtn.active {
+    background: #1993FF;
+}
+.forgotPassword {
+    margin: auto;
+    text-decoration: none;
+    font-size: 12px;
+    margin-bottom: 43px;
+    color: #FFFFFF;
+}
+.logInWithPhone {
+    margin: auto;
+    text-decoration: none;
+    font-size: 12px;
+    margin-bottom: 118px;
+    color: #FFFFFF;
+}
+
+

@@ -1,0 +1,183 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    background: #1A1A1A;
+}
+.links {
+    background: #222327;
+    height: 40px;
+}
+.footerContent {
+    padding: 24px 20px 32px;
+}
+.namavaBox {
+    display: flex;
+    align-items: center;
+}
+.namavaApp {
+    display: flex;
+    background: linear-gradient(180deg, #1993FF 0%, #005FB4 100%);
+    border-radius: 8px;
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+}
+.namavaApp .namavaLogo {
+    width: 50px;
+    height: 25px;
+}
+.namavaAppText {
+    font-size: 14px;
+    font-weight: 700;
+}
+.applicationsStores {
+    display: flex;
+    align-items: center;
+}
+.applicationsStores > div {
+    display: flex;
+    width: 48px;
+    height: 48px;
+    background: #37383E;
+    border-radius: 6px;
+    margin: 16px;
+    margin-right: 0;
+    align-items: center;
+    justify-content: center;
+}
+.applicationsStores:last-child {
+    color:#1993FF;
+}
+.appText {
+    display: none;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+.aboutTitle {
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.aboutText {
+    font-size: 11px;
+    color: #AAAAAA;
+    line-height: 26px;
+    margin-bottom: 16px;
+}
+.aboutLogos > img {
+    width: 90px;
+    height: 90px;
+    margin-left: 16px;
+}
+
+.conectUsLogo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 23px;
+}
+.conectUsLogo > img {
+    margin: 0 15px;
+}
+.conectUsText {
+    font-size: 10px;
+    color: #AAAAAA;
+}
+@media screen and (min-width: 500px) {
+    .application {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 25px;
+    }
+    .about {
+        border-bottom: 1px solid #37383E;
+        margin-bottom: 24px;
+    }
+    .aboutText {
+        margin-left: 28px;
+    }
+    .aboutContent {
+        display: flex;
+    }
+    .aboutLogos > img {
+        margin: 0 0 20px;
+    }
+    .aboutText {
+        margin-bottom: 0;
+    }
+}
+@media screen and (min-width: 800px) {
+    .footerContent {
+        padding: 24px 29px;
+    }
+    .aboutContent {
+        padding-bottom: 26px;
+    }
+    .aboutLogos {
+        display: flex;
+    }
+    .aboutText {
+        margin-left: 34px;
+    }
+    .aboutLogos .eNamad {
+        margin-left: 28px;
+    }
+    .conectUs {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    .conectUsText {
+        margin-left: 57px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .footerContent {
+        width: 1142px;
+        margin: auto;
+    }
+    .applicationsStores > div {
+        width: 116px;
+        justify-content: start;
+    }
+    .applicationsStores > div > img{
+        margin-left: 8px;
+    }
+    .appText {
+        display: flex;
+        flex-direction: column;
+        color: #F2F2F2;
+        font-size: 12px;
+        font-weight: 700;
+    }
+    .appTextTitle {
+        font-size: 9px;
+        font-weight: 400;
+        color: #AAAAAA;
+    }
+    .application {
+        background: #222327;
+        padding: 0 24px;
+        border-radius: 5px;
+    }
+    .namavaAppText {
+        font-size: 16px;
+    }
+    .aboutLogos > img {
+        width: 100px;
+        height: 100px;
+    }
+    .aboutContent {
+        padding-bottom: 18px;
+    }
+    .conectUsText {
+        width: 578px;
+    }
+}

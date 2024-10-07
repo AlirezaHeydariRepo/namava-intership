@@ -1,56 +1,60 @@
+/* eslint-disable no-unused-vars */
 import React, {useState} from 'react'
 import './style.css'
 import eye from '../../assets/images/eye.svg'
 import eyeSlash from '../../assets/images/eyeSlash.svg'
 import axios from 'axios'
 import ToastContainer from '../ToastContainer'
+import { Player } from '@lottiefiles/react-lottie-player'
+import loading from '../../lottie/loading.json'
 
 export default function LogIn() {
   const [showPassword, setShowPassword] = useState(false)
   const [password, setPassword] = useState('')
   const [email, setEmail] = useState('') 
-  const [isValid, setIsValid] = useState(false)
   const [toast, setToast] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
-  const handlePassword = (value) => {
-    setPassword(value)
-  }
-  const handleEmail = (value) => {
-    setEmail(value)
-  }
 
   const request = () => {
-    validateEmail()
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    const isValid = emailPattern.test(email)
+
     if (!isValid) {
-      setToast(true)
       showToast()
     } else {
       loginRequest()
     }
   }
 
-  const validateEmail = () => {
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    const currValidation = emailPattern.test(email)
-    setIsValid(currValidation)
-  }
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword)
-  }
   const showToast = () => {
+    setToast(true)
     setTimeout(() => {
       setToast(false)
     }, 4000)
   }
+  function setCookie(key) {
+    let expires = new Date()
+    expires.setTime(expires.getTime())
+    expires.toUTCString()
+    const value = expires
+    document.cookie = `${key}=${value}; max-age=100; path=/`
+  }
+  
   const loginRequest = () => {
+    setIsLoading(true)
     axios.post(
       'https://www.namava.ir/api/v1.0/accounts/login',
       {
         UserName: email,
         Password: password
-      })
-  
+      }).then(Response => {
+      setIsLoading(false)
+      setCookie(email, 10)
+      window.location.href = 'https://www.namava.ir/home'
+    })
   }
+
 
   return (
     <div className='logIn'>
@@ -63,7 +67,7 @@ export default function LogIn() {
           className='emailInput' 
           type="email" 
           placeholder='ایمیل خود را وارد کنید.'
-          onChange={(e) => handleEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
         />
       </div>
       <div className="password">
@@ -72,22 +76,20 @@ export default function LogIn() {
           <input className='passwordInput' 
             type={showPassword ? 'text' : 'password'} 
             placeholder='رمز خود را وارد کنید.'
-            onChange={(e) => handlePassword(e.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
           />
           {password && 
             <img
               className='passwordIcon'
               src={showPassword ? eyeSlash : eye}
-              onClick={togglePasswordVisibility}
+              onClick={() => setShowPassword(prev => !prev)}
               alt='passwordIcon'
             />
           }
         </div>
       </div>
       <div className={`logInBtn ${(email && password) ? 'active' : ''}`} onClick={request}>
-        <span className="logInBtnText">
-        ورود
-        </span>
+        {isLoading ? <Player className='lottie' autoplay loop src={loading}/> : <span className='logInBtnText'>ورود</span>}
       </div>
       <a className="forgotPassword" href='https://www.namava.ir/auth/recover-email'>
       رمز عبور خود را فراموش کرده‌ام.

@@ -20,3 +20,22 @@
     background: #FFFFFF33;
     border-radius: 5px;
 }
+@media screen and (min-width: 800px) {
+    .navBar {
+        width: 440px;
+        margin: auto;
+        margin-bottom: 32px;
+    }
+}
+@media screen and (min-width: 1280px) {
+    .navBar {
+        width: 500px;
+    }
+    .signInBtn {
+        width: 96px;
+    }
+}@media screen and (min-width: 1920px) {
+    .navBar {
+        width: 660px;
+    }
+}

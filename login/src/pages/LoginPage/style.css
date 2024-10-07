@@ -1,3 +1,26 @@
 .loginPage {
-    padding: 50px 40px;
+    padding: 50px 40px 0;
+}
+@media screen and (min-width: 500px) {
+    .loginPage {
+        padding: 50px 70px 0;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .loginPage {
+        padding: 50px 180px 93px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .loginPage {
+        padding: 50px 390px 103px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .loginPage {
+        padding: 50px 630px 92px;
+    }
 }

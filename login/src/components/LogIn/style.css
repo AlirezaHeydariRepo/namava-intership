@@ -73,12 +73,15 @@
 .logInBtn {
     display: flex;
     justify-content: center;
-    padding: 9px;
+    padding: 0 9px;
     font-size: 14px;
     font-weight: 700;
     background: #FFFFFF33;
     border-radius: 5px;
     margin-bottom: 38px;
+}
+.logInBtnText {
+    margin: 9px 0;
 }
 .logInBtn.active {
     background: #1993FF;
@@ -97,5 +100,51 @@
     margin-bottom: 118px;
     color: #FFFFFF;
 }
-
+.lottie {
+    width: 42px;
+    height: 42px;
+}
+@media screen and (min-width: 500px) {
+    .logIn .title {
+        font-size: 16px;
+    }
+    .forgotPassword {
+        font-size: 14px;
+        font-weight: 700;
+    }
+    .logInWithPhone {
+        font-size: 14px;
+        font-weight: 700;
+    }
+}
+@media screen and (min-width: 800px) {
+    .logIn {
+        width: 440px;
+        margin: auto;
+        background: #222327;
+        box-shadow: 0px 3px 6px 0px #00000080;
+        padding: 40px 40px 79px;
+        border-radius: 6px;
+    }
+}
+@media screen and (min-width: 1280px) {
+    .logIn {
+        width: 500px;
+        padding: 36px 70px 70px;
+    }
+    .logIn .title {
+        font-size: 20px;
+    }
+}@media screen and (min-width: 1920px) {
+    .logIn {
+        width: 660px;
+        padding: 40px 80px 70px;
+    }
+    .emailTitle {
+        font-size: 14px;
+    }
+    .passwordTitle {
+        font-size: 14px;
+    }
+}
 

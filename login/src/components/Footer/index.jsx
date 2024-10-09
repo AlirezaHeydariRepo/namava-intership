@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './style.css'
 import namavaLogo from '../../assets/images/namavaLogo.svg'
 import sibApp from '../../assets/images/sibApp.svg'
@@ -9,12 +9,81 @@ import samandehi from '../../assets/images/samandehi.svg'
 import instagram from '../../assets/images/instagram.svg'
 import telegram from '../../assets/images/telegram.svg'
 import twitter from '../../assets/images/twitter.svg'
-
+import moreLinksImg from '../../assets/images/chevron-Down.png'
 
 export default function Footer() {
+  // eslint-disable-next-line no-unused-vars
+  const [resize, setResize] = useState(false)
+  const [currClass, setCurrClass] = useState('inactive')
+  const links = ['اپلیکیشن‌ها', 'فرصت‌های شغلی ', 'تبلیغات در نماوا', 'خرید اشتراک', 'کارت هدیه', 'سوالات متداول', 'تماس با ما', 'درباره نماوا', 'شرایط مصرف اینترنت', 'ارسال فیلمنامه']
+
+  const widthSize = (value) => {
+    let linksCount = 0
+    if (value < 500) {
+      value = '360'
+      linksCount = 2
+    } else if (value < 800) {
+      value = '500'
+      linksCount = 3
+    } else if (value < 1280) {
+      value = '800'
+      linksCount = 5
+    } else if (value < 1920) {
+      linksCount = 7
+      value = '1280'
+    } else {
+      linksCount = 11
+      value = '1920'
+    }
+    return [value , linksCount]
+  } 
+  let currWidth = window.innerWidth
+  currWidth = widthSize(currWidth)
+  // console.log(currWidth)
+  window.addEventListener('resize', () => {
+    setResize(true)
+    const newWidth = widthSize(window.innerWidth)
+    if (newWidth[0] !== currWidth[0]) {
+      currWidth[0] = newWidth[0]
+      setResize(false)
+    }
+    
+  })
+  const handleClick = (value) => {
+    // console.log(value)
+    
+    if (value === 'moreLinks inactive') {
+      setCurrClass('active')
+    } else if (value === 'moreLinks active') {
+      setCurrClass('inactive')
+
+    }
+  }
+  
+  const showedLinks = []
+  for (let i = 0; i < currWidth[1]; i++) {
+    showedLinks.push(<span key={i} className='link'>{links[i]}</span>)
+  }
+  const hiddenLinks = []
+  for (let i = currWidth[1]; i < links.length; i++) {
+    hiddenLinks.push(<span key={i} className='link'>{links[i]}</span>)
+  }
+  
   return (
     <footer>
-      <div className="links"></div>
+      <div className="links">
+        {
+          showedLinks.map((value) => value
+          )
+        }
+        <div className={`moreLinks ${currClass}`} onClick={(e) => handleClick(e.currentTarget.className)}>
+          <sapn className="moreLinksText">سایر لینک‌ها</sapn>
+          <img src={moreLinksImg} alt="moreLinksImg" className="moreLinksImg" />
+          <div className={`accordion ${currClass}`}>
+            {hiddenLinks.map(value => value)}
+          </div>
+        </div>
+      </div>
       <div className="footerContent">
         <div className="application">
           <div className="namavaBox">

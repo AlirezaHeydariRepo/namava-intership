@@ -6,6 +6,48 @@ footer {
 .links {
     background: #222327;
     height: 40px;
+    color: #AAAAAA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.link {
+    margin-left: 40px;
+    font-size: 12px;
+}
+.moreLinks {
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size: 12px;
+}
+.moreLinksText {
+    margin-left: 8px;
+}
+.moreLinksImg {
+    width: 20px;
+    height: 20px;
+    transform: rotate(180deg);
+}
+.moreLinks.active .moreLinksImg {
+    transform: rotate(0deg);
+}
+.accordion.inactive {
+    display: none;
+}
+.accordion {
+    display: flex;
+    flex-direction: column;
+    background: #222327;
+    color: #AAAAAA;
+    width: 150px;
+    position: absolute;
+    left: -20px;
+    top: -292px;
+
+}
+.accordion > span {
+    margin: 8px ;
 }
 .footerContent {
     padding: 24px 20px 32px;
@@ -89,7 +131,11 @@ footer {
     font-size: 10px;
     color: #AAAAAA;
 }
+
 @media screen and (min-width: 500px) {
+    .accordion {
+        top: -255.5px;
+    }
     .application {
         display: flex;
         justify-content: space-between;
@@ -113,6 +159,9 @@ footer {
     }
 }
 @media screen and (min-width: 800px) {
+    .accordion {
+        top: -182.5px;
+    }
     .footerContent {
         padding: 24px 29px;
     }
@@ -139,6 +188,9 @@ footer {
 }
 
 @media screen and (min-width: 1280px) {
+    .accordion {
+        top: -109.5px;
+    }
     .footerContent {
         width: 1142px;
         margin: auto;
@@ -179,5 +231,10 @@ footer {
     }
     .conectUsText {
         width: 578px;
+    }
+}
+@media screen and (min-width: 1920px) {
+    .moreLinks {
+        display: none;
     }
 }

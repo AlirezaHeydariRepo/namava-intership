@@ -1,10 +1,11 @@
 .app {
     color: #FFFFFF;
-    background: radial-gradient(50% 33.71% at 50% 65%, rgba(1, 111, 216, 0.349508) 12.25%, rgba(1, 111, 216, 0.0001) 100%);
+    background: radial-gradient(50% 73.71% at 50% 100%, #016FD8 0%, rgba(1, 111, 216, 0.749508) 30.25%, rgba(1, 111, 216, 0.0001) 100%);
+
 }
 @media screen and (min-width: 800px) {
     .app {
-        background: radial-gradient(50% 33.71% at 50% 65%, rgba(1, 111, 216, 0.349508) 15.25%, rgba(1, 111, 216, 0.0001) 100%);
+        /* background: radial-gradient(50% 33.71% at 50% 50%, #016FD8 0%, rgba(1, 111, 216, 0.749508) 30.25%, rgba(1, 111, 216, 0.0001) 100%); */
 
     }
 }

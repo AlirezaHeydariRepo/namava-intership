@@ -128,6 +128,9 @@
     }
 }
 @media screen and (min-width: 1280px) {
+    .logInWithPhone {
+        margin-bottom: 0;
+    }
     .logIn {
         width: 500px;
         padding: 36px 70px 70px;

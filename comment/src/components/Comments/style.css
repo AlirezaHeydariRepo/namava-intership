@@ -1,0 +1,49 @@
+.container {
+    padding-bottom: 24px;
+}
+.moreComments {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 42px;
+    width: 97px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.moreComments.inactive {
+    display: none;
+}
+.moreComments .moreBtn {
+    font-size: 12px;
+}
+.moreComments .loadingLottie {
+    width: 40px;
+    height: 40px;
+}
+.container > div {
+    border-bottom: 1px solid rgba(55, 56, 62, 1);
+}
+.container :nth-last-child(2),
+.container :nth-last-child(1) {
+    border-bottom: none;
+}
+@media screen and (min-width: 540px) {
+    .container {
+        padding-bottom: 32px;
+    }
+}
+@media screen and (min-width: 1280px) {
+    .comments .commentsContent {
+        width: 954px;
+    }
+    .moreComments .moreBtn {
+        font-size: 14px;
+    }
+}
+@media screen and (min-width: 1920px) {
+    .moreComments .moreBtn {
+        font-size: 16px;
+    }
+}

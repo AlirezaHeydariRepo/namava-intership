@@ -1,0 +1,21 @@
+.dislike {
+    display: flex;
+    align-items: center;
+    margin-left: 24px;
+}
+.dislike .icon {
+    margin-left: 12px;
+    height: 32px;
+}
+.dislike > img {
+    width: 32px;
+    height: 32px;
+}
+.dislikeCount {
+    color: rgba(170, 170, 170, 1);
+}
+.dislike .lootie {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+}

@@ -1,0 +1,68 @@
+.checkBox {
+    display: flex;
+    padding: 18px 0 7px;
+    align-items: center;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.checkBox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+}
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(242, 242, 242, 1);
+    margin-left: 8px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.checkBox input:checked~.checkmark {
+    background-color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkBox .checkmark:after {
+    content: "";
+    display: none;
+}
+
+/* Style the checkmark/indicator */
+.checkBox .checkmark:after {
+    width: 6px;
+    height: 12px;
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    border-radius: 1px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin-bottom: 1px;
+}
+
+/* Show the checkmark when checked */
+.checkBox input:checked~.checkmark:after {
+    display: flex;    
+}
+.checkBoxText {
+    font-size: 10px;
+}
+@media screen and (min-width: 540px) {
+    .checkBox {
+        margin-right: 40px;
+    }
+}
+@media screen and (min-width: 800px) {
+    .checkBox {
+        margin-right: 48px;
+    }
+}

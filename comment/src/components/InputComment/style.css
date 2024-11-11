@@ -1,0 +1,60 @@
+.inputComment {
+    padding: 0 24px;
+    width: 100%;
+}
+.inputComment .title {
+    font-size: 16px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 1);
+    padding: 24px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.inputWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.inputWrapper .avatar {
+    height: 32px;
+    width: 32px;
+}
+.input {
+    flex-grow: 1;
+    overflow: auto;
+    height: 40px;
+    padding-right: 12px;
+    border-radius: 6px;
+    border: none;
+    margin: 0 20px 0 8px;
+}
+.input:focus-visible {
+    outline: none;
+}
+.sendButton {
+    height: 32px;
+    width: 32px;
+}
+@media screen and (min-width: 540px) {
+    .input {
+        margin: 0 8px;
+    }
+}
+@media screen and (min-width: 800px) {
+    .input {
+        margin: 0 16px;
+    }
+}
+@media screen and (min-width: 1280px) {
+    .inputComment .title {
+        font-weight: 400;
+        font-size: 18px;
+    }
+}
+@media screen and (min-width: 19200px) {
+    .inputComment .title {
+        font-weight: 700;
+        font-size: 20px;
+    }
+}

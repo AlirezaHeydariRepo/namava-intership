@@ -5,7 +5,7 @@ import CommentPage from './pages/CommentPage'
 
 function App () {
   return (
-    <div>
+    <div className='app'>
       <CommentPage />
       <Footer />
     </div>

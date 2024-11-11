@@ -75,7 +75,7 @@ export default function Footer () {
           )
         }
         <div className={`moreLinks ${currClass}`} onClick={(e) => handleClick(e.currentTarget.className)}>
-          <sapn className="moreLinksText">سایر لینک‌ها</sapn>
+          <span className="moreLinksText">سایر لینک‌ها</span>
           <img src={moreLinksImg} alt="moreLinksImg" className="moreLinksImg" />
           <div className={`accordion ${currClass}`}>
             {hiddenLinks.map(value => value)}

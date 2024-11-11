@@ -4,7 +4,7 @@ footer {
     background: #1A1A1A;
     color: rgba(255, 255, 255, 1);
 }
-.links {
+footer .links {
     background: #222327;
     height: 40px;
     color: #AAAAAA;

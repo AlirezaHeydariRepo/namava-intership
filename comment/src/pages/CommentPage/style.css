@@ -1,0 +1,50 @@
+.commentPage .content {
+    background: rgba(34, 35, 39, 1);
+    color: rgba(255, 255, 255, 1);
+    padding-top: 24px;
+    margin-bottom: 80px;
+
+}
+.commentPage .titleLogout {
+    color: rgba(255, 255, 255, 1);
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 24px;
+    margin-bottom: 8px;
+}
+@media screen and (min-width: 800px) {
+    .commentPage .content {
+        margin-bottom: 100px;
+    }
+    .commentPage .titleLogout {
+        margin: 0 33px 8px;
+        font-size: 18px;
+        font-weight: 400;
+    }
+}
+@media screen and (min-width: 1280px) {
+    .commentPage .content {
+        width: 994px;
+        margin: auto;
+        margin-bottom: 115px;
+    }
+    .commentPage .titleLogout {
+        display: flex;
+        justify-content: start;
+        font-size: 18px;
+        font-weight: 400;
+        width: 994px;
+        margin: 0 auto 8px;
+    }
+}
+@media screen and (min-width: 1920px) {
+    .commentPage .content {
+        width: 1000px;
+        margin-bottom: 119px;
+    }
+    .commentPage .titleLogout {
+        font-size: 20px;
+        font-weight: 700;
+        width: 1000px;
+    }
+}

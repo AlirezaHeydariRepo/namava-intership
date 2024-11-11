@@ -1,0 +1,74 @@
+.loginBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 51px;
+    background: rgba(55, 56, 62, 1);
+    margin: 8px 0 12px;
+    border-radius: 8px;
+    margin: auto;
+    width: 88.88%;
+}
+.loginBox .boxTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+.loginBox .titleIcon {
+    width: 40px;
+    height: 40px;
+    padding-left: 8px;
+}
+.loginBox .titleText {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 1);
+}
+.loginBox .links {
+    display: flex;
+    justify-content: space-between;
+}
+.loginBox .links > a{
+    text-decoration: none;
+    height: 42px;
+    width: 97px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.loginBox .signin {
+    background: rgba(255, 255, 255, 1);
+    color: rgba(0, 0, 0, 1);
+    margin-left: 24px;
+    font-size: 14px;
+    font-weight: 700;
+}
+.loginBox .login {
+    color: rgba(255, 255, 255, 1);
+    background: rgba(255, 255, 255, 0.2);
+    font-weight: 700;
+    font-size: 12px;
+
+}
+@media screen and (min-width: 500px) {
+
+    .loginBox {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 12px 16px;
+        width: 462px;
+    }
+    .loginBox .boxTitle {
+        margin-bottom: 0;
+    }
+}
+@media screen and (min-width: 1280px) {
+    .loginBox {
+        width: 484px;
+    }
+    .loginBox .links > a{
+        width: 108px;
+    }
+}

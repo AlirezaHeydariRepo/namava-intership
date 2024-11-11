@@ -1,0 +1,39 @@
+.spoiledComment {
+    background: rgba(55, 56, 62, 1);
+    height: 58px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.spoiledComment .spoilWarning {
+    display: flex;
+    align-items: center;
+}
+
+.spoiledComment .text {
+    font-size: 12px;
+    padding: 0 12px;
+}
+
+.spoiledComment .chevronDown {
+    width: 24px;
+    height: 24px;
+}
+
+.spoiledComment .warningIcon {
+    width: 20px;
+    height: 20px;
+}
+
+@media screen and (min-width:1280px) {
+    .spoiledComment {
+        width: 459px;
+    }
+}

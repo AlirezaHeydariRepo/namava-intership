@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './style.css'
 import axios from 'axios'
 import EmptyState from '../../components/EmptyState'
@@ -6,27 +6,22 @@ import Comments from '../../components/Comments'
 import NavBar from '../../components/NavBar'
 import InputComment from '../../components/InputComment'
 import LoginBox from '../../components/LoginBox'
-
+import Cookies from 'js-cookie'
 export default function CommentPage () {
   const [login, setLogin] = useState('isLogout')
   const [data, setData] = useState([])
   const [isLoading, setIsLoading] = useState(false)
-  const dataCount = useRef(0)
+  const [fetchMore, setFetchMore] = useState(false)
+
   const setCookie = () => {
-    document.cookie = `${'Login'}=${'isLogin'}`
+    Cookies.set('Login', 'isLogin')
   }
 
   const isAuthV2CookieAvailable = () => {
-    const cookies = document.cookie.split(';')
-    for (let i = 0; i < cookies.length; i++) {
-      const cookie = cookies[i].split('=')
-      const cookieKey = cookie[0].trim()
-      const cookieValue = cookie[1]
-      if (cookieKey === 'Login') {
-        return setLogin(cookieValue)
-      }
-    }
+    setLogin(Cookies.get('Login'))
   }
+  console.log(Cookies.get('Login'), login)
+
   const fetchData = (page) => {
     // 140274 , 1800
     setIsLoading(true)
@@ -34,9 +29,11 @@ export default function CommentPage () {
       .then(response => {
         setIsLoading(false)
         const dataObj = [...response.data.result]
-        dataCount.current = dataObj.length
+        setFetchMore(response.data.result.length === 10)
         setData(prev => [...prev, ...dataObj])
-      })
+      }).catch(
+        console.log('failed')
+      )
   }
 
   useEffect(() => {
@@ -44,7 +41,6 @@ export default function CommentPage () {
     isAuthV2CookieAvailable()
     fetchData(1)
   }, [])
-  // data.length = 0
   console.log(data)
 
   return (
@@ -57,7 +53,7 @@ export default function CommentPage () {
           : <LoginBox />
         }
         {data.length
-          ? <Comments data={data} fetchData={fetchData} dataCount={dataCount.current} isLoading={isLoading}/>
+          ? <Comments data={data} fetchData={fetchData} fetchMore={fetchMore} isLoading={isLoading}/>
           : <EmptyState />
         }
       </div>

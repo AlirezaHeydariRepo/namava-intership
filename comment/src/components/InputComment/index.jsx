@@ -4,12 +4,13 @@ import avatar from '../../assets/img/avatar.svg'
 import send from '../../assets/img/send.svg'
 import activeSend from '../../assets/img/activeSend.svg'
 import CheckBox from '../CheckBox'
+import warningError from '../../assets/img/warningError.svg'
 
 export default function InputComment (props) {
   const { setData } = props
   const [spoil, setSpoil] = useState(false)
   const [currInput, setCurrInput] = useState('')
-
+  const [error, setError] = useState(false)
   const createDateUTC = () => {
     let currDate = new Date().toISOString()
     currDate = currDate.split('-').join('').split(':').join('').split('.').join('')
@@ -17,7 +18,9 @@ export default function InputComment (props) {
   }
 
   const sendComment = () => {
-    if (currInput) {
+    const currError = false
+    setError(currInput)
+    if (currInput && !currError) {
       const newComment = {
         body: currInput,
         commentLikeDislike: {
@@ -35,6 +38,8 @@ export default function InputComment (props) {
     } else {
       console.log('please write comment')
     }
+    setCurrInput('')
+    setSpoil(false)
   }
 
   return (
@@ -47,6 +52,7 @@ export default function InputComment (props) {
           type="text"
           placeholder='نظراتان درباره این فیلم چیست؟'
           onChange={(e) => setCurrInput(e.target.value)}
+          value={currInput}
         />
         <img
           className='sendButton'
@@ -55,7 +61,13 @@ export default function InputComment (props) {
           onClick={sendComment}
         />
       </div>
-      <CheckBox setSpoil={setSpoil}/>
+      {error &&
+        <div className="error">
+          <img className='errorImg' src={warningError} alt="warningError" />
+          <span className="errorText">ثبت نظر ناموفق بود.</span>
+        </div>
+      }
+      <CheckBox spoil={spoil} setSpoil={setSpoil}/>
     </div>
   )
 }

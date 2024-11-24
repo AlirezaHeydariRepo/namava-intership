@@ -6,6 +6,9 @@
     margin: 0;
     font-family: IRANYekan;
 }
+/* body {
+    min-height: 100vh;
+} */
 .index {
     background: #121212;
 }

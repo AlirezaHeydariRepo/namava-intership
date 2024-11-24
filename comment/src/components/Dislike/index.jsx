@@ -7,24 +7,18 @@ import dislikeActive from '../../lotties/dislikeActive.json'
 import dislikeInactive from '../../lotties/dislikeInactive.json'
 
 export default function Dislike (props) {
-  const { toPersianNumber, dislike } = props
-  const [active, setActive] = useState(false)
-  const [currdislike, setCurrdislike] = useState(dislike)
+  const { toPersianNumber, dislike, handleLikeDislike, active } = props
   const [isFirstRender, setIsFirstRender] = useState(true)
   const lottieRef = useRef(null)
 
-  const handledislike = () => {
-    setActive(prev => !prev)
-    setCurrdislike(active ? currdislike - 1 : currdislike + 1)
-  }
   useEffect(() => {
     setIsFirstRender(false)
-    lottieRef.current.setPlayerDirection(active ? 1 : -1)
+    lottieRef.current.setPlayerDirection(active === 'dislike' ? 1 : -1)
   }, [active])
 
   return (
     <div className="dislike">
-      <div className='icon' onClick={handledislike}>
+      <div className='icon' onClick={() => handleLikeDislike('dislike')}>
         <Player
           ref={lottieRef}
           autoplay={!isFirstRender}
@@ -32,12 +26,12 @@ export default function Dislike (props) {
           loop={false}
           keepLastFrame={true}
           direction={1}
-          src={(isFirstRender ? !active : active) ? dislikeActive : dislikeInactive}
+          src={(active === 'dislike') ? dislikeActive : dislikeInactive}
           style={{ borderRadius: '6px', margin: '0px' }}
         />
         <img src={dislikeIcon} alt="dislike"/>
       </div>
-      <span className='dislikeCount'>{toPersianNumber(currdislike)}</span>
+      <span className='dislikeCount'>{toPersianNumber(dislike + (active === 'dislike' ? 1 : 0))}</span>
     </div>
   )
 }

@@ -5,7 +5,7 @@ import { Player } from '@lottiefiles/react-lottie-player'
 import loading from '../../lotties/loading.json'
 
 export default function Comments (props) {
-  const { data, fetchData, dataCount, isLoading } = props
+  const { data, fetchData, fetchMore, isLoading } = props
 
   const [page, setPage] = useState(1)
 
@@ -22,9 +22,12 @@ export default function Comments (props) {
           <Comment key={item.id} item={item}/>
         )
       })}
-      <div className={`moreComments ${dataCount < 10 ? 'inactive' : ''}`} onClick={handleMoreComments}>
-        {isLoading ? <Player className='loadingLottie' autoplay loop src={loading}/> : <span className='moreBtn'>بیشتر</span>}
-      </div>
+      {fetchMore &&
+      <div className='moreComments' onClick={handleMoreComments}>
+        {isLoading
+          ? <Player className='loadingLottie' autoplay loop src={loading}/>
+          : <span className='moreBtn'>بیشتر</span>}
+      </div>}
     </div>
   )
 }

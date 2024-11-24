@@ -18,7 +18,8 @@ export default function CommentPage () {
   }
 
   const isAuthV2CookieAvailable = () => {
-    setLogin(Cookies.get('Login'))
+    const currCookie = Cookies.get('Login')
+    setLogin(currCookie)
   }
   console.log(Cookies.get('Login'), login)
 

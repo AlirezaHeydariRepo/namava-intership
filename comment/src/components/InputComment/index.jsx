@@ -18,7 +18,7 @@ export default function InputComment (props) {
   }
 
   const sendComment = () => {
-    const currError = false
+    const currError = true
     setError(currInput)
     if (currInput && !currError) {
       const newComment = {
@@ -62,7 +62,7 @@ export default function InputComment (props) {
         />
       </div>
       {error &&
-        <div className="error">
+        <div className="error" >
           <img className='errorImg' src={warningError} alt="warningError" />
           <span className="errorText">ثبت نظر ناموفق بود.</span>
         </div>

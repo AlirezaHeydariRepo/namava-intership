@@ -1,20 +1,25 @@
 .slider-container {
     position: relative;
     height: 100%;
+
+    .inactiveSlide {
+        /* z-index: 0; */
+        opacity: 0;
+        position: absolute;
+        transition: opacity 1s ease-in-out;
+        width: 100%;
+        height: 100%;
+    }
+
+    .activeSlide {
+        /* z-index: 1; */
+        opacity: 1;
+        position: absolute;
+        transition: opacity 1s ease-in-out;
+        width: 100%;
+        height: 100%;
+    }
 }
   
-.inactiveSlide {
-    opacity: 0;
-    position: absolute;
-    transition: opacity 1s ease-in-out;
-    width: 100%;
-    height: 100%;
-}
 
-.activeSlide {
-    opacity: 1;
-    position: absolute;
-    transition: opacity 1s ease-in-out;
-    width: 100%;
-    height: 100%;
-}
+

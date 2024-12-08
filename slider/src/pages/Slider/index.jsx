@@ -13,13 +13,12 @@ export default function Slider() {
   const [loading, setLoading] = useState(false)
   const timeoutRef = useRef(null)
 
-
   const fetchData = async () => {
     setLoading(true)
     try {
       const response = await axios.get('https://www.namava.ir/api/v2.0/medias/sliders/1316')
-      const dataObj = response.data.result
-      setData(dataObj)
+      const dataArr = response.data.result
+      setData(dataArr)
       setLoading(false)
     } catch (error) {
       console.error('Error fetching data:', error)
@@ -37,27 +36,28 @@ export default function Slider() {
       }
       timeoutRef.current = setTimeout(() => {
         setIndexOfCurrItem(prev => prev === (data.length - 1) ? 0 : prev + 1)
-      }, 3000)
+      }, 10000)
       return () => clearTimeout(timeoutRef.current)
     }
   }, [indexOfCurrItem, data.length, isOpen])
 
+  if (loading || data.length === 0) {
+    return (
+      <Player
+        autoplay
+        loop
+        src={loadingLottie}
+        style={{ 
+          height: '300px', 
+          width: '300px', 
+          paddingTop: '50px'
+        }}
+      >
+      </Player>)
+  }
 
   return (
     <div className="slider-container">
-      {loading &&
-        <Player
-          autoplay
-          loop
-          src={loadingLottie}
-          style={{ 
-            height: '300px', 
-            width: '300px', 
-            paddingTop: '50px'
-          }}
-        >
-        </Player>
-      }
       {isOpen && (
         <TrailerModal
           trailerVideoUrl={data[indexOfCurrItem]?.trailerVideoUrl} // Access trailer URL from current item

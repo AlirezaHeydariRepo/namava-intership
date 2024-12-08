@@ -17,10 +17,6 @@ export default function Slide (props) {
     setIndexOfCurrItem,
     trailerVideoUrl,
     setOpen } = props
-
-  
-  
-  
   
   const handleNext = () => {
     const nextSlide = ( currIndex + 1 ) % dataLength

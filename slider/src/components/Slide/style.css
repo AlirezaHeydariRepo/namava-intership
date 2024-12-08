@@ -1,57 +1,147 @@
 .slide {
-    width: 100%;
+    width: 100vw;
     height: 678px;
     color: #FFFFFF;
     position: fixed;
     top: 0;
     left: 0;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        width: 37.5%;
+        justify-content: center;
+        align-items: flex-start;
+        padding-right: 43px;
+        position: relative;
+        z-index: 1;
+        height: 531px;
+
+        .logo {
+            max-width: 20vw;
+            max-height: 10vw;
+            margin-bottom: 10px;
+        }
+
+        .caption {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .description {
+            display: flex;
+            margin-bottom: 12px;
+
+
+            .ageRange {
+                display: flex;
+                justify-content: center;
+                color: black;
+                align-items: center;
+                font-size: 14px;
+                width: 37px;
+                height: 24px;
+                border-radius: 12px;
+                margin-left: 24px;
+                font-weight: bold;
+            }
+
+            .ageRange.red {
+                background: linear-gradient(rgb(228, 140, 140) 0%, rgb(171, 72, 72) 100%)
+            }
+            .ageRange.orange {
+                background: linear-gradient(rgb(244, 168, 134) 0%, rgb(186, 102, 64) 100%);
+            }
+            .ageRange.yellow {
+                background: linear-gradient(rgb(255, 213, 76) 0%, rgb(222, 171, 0) 100%);
+            }
+            .ageRange.green {
+                background: linear-gradient(rgb(183, 211, 130) 0%, rgb(115, 145, 58) 100%)
+            }
+            .imdb {
+                display: flex;
+                align-items: center;
+
+                .imdbText {
+                    margin-right: 4px;
+                }
+            }
+        }
+        .buttons {
+            display: flex;
+
+            .login {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #FFFFFF;
+                border-radius: 12px;
+                color: black;
+                font-size: 12px;
+                padding: 0 16px 0 20px;
+                font-weight: 700;
+                margin-left: 16px;
+                cursor: pointer;
+                text-decoration: none;
+                height: 42px;
+
+                .loginText {
+                    padding-right: 8px;
+                }
+            }
+            .login:hover {
+                background-color: #1993ff;
+                color: #FFFFFF;
+            }
+
+        }
+
+    }
+
+    .arrow {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        padding: 30px;
+        position: absolute;
+        left: 30px;
+        bottom: 40px;
+
+        .prev {
+            display: flex;
+            align-items: center;
+            height: 40px;
+            width: 40px;
+        }
+        .prev:hover {
+            color: #FFFFFF;
+        }
+
+        .next {
+            display: flex;
+            align-items: center;
+            transform: rotate(180deg);
+            margin-right: 10px;
+            height: 40px;
+            width: 40px;
+        }
+    }
+
+    .videoModal {
+        width: 105px;
+        height: 42px;
+        border: none;
+        cursor: pointer;    
+        border-radius: 10px;
+        background-color: rgba(255,255,255,0.2);
+        color: #FFFFFF;
+    }
+    .videoModal:hover {
+        background-color: rgba(255,255,255,0.4);
+    }
 }
-.slide .content {
-    width: 37.5%;
-    padding: 101.109px 43px;
-    position: relative;
-    z-index: 1;
-    height: 480px;
-}
-.slide .logo {
-    max-width: 20vw;
-    max-height: 10vw;
-    margin-bottom: 10px;
-}
-.slide .caption {
-    font-size: 20px;
-}
-.slide .description {
-    display: flex;
-}
-.slide .description .ageRange {
-    display: flex;
-    justify-content: center;
-    color: black;
-    align-items: center;
-    font-size: 14px;
-    width: 37px;
-    height: 24px;
-    background-color: chocolate;
-    border-radius: 12px;
-    margin-left: 24px;
-}
-.slide .arrow {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    padding: 30px;
-}
-.slide .arrow .prev {
-    display: flex;
-    align-items: center;
-}
-.slide .arrow .next {
-    display: flex;
-    align-items: center;
-    transform: rotate(180deg);
-    margin-right: 10px;
-}
+

@@ -37,7 +37,7 @@ export default function Slider() {
       }
       timeoutRef.current = setTimeout(() => {
         setIndexOfCurrItem(prev => prev === (data.length - 1) ? 0 : prev + 1)
-      }, 6000)
+      }, 3000)
       return () => clearTimeout(timeoutRef.current)
     }
   }, [indexOfCurrItem, data.length, isOpen])

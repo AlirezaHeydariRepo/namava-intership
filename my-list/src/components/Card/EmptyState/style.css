@@ -1,0 +1,12 @@
+.emptyStateContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px 0;
+
+    .text {
+        color: #FFF;
+        font-size: 18px;
+        padding: 60px 0;
+    }
+}

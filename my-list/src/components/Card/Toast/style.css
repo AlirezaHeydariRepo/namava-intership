@@ -1,0 +1,32 @@
+.toastContainer {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.toast {
+    background: #D95C5C;
+    border-radius: 12px;
+    width: 405px;
+    height: 46px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 16px;
+}
+.toast.active {
+    position: absolute;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+.toast.inactive {
+    position: absolute;
+    opacity: 0;
+}
+.toastText {
+    font-size: 14px;
+    color: #fff;
+}
+.toastIcon {
+    width: 24px;
+    height: 24px;
+}

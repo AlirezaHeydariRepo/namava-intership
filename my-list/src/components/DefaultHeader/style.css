@@ -1,0 +1,23 @@
+header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 56px;
+        height: 40px;
+        padding: 0 43px;
+
+        .title {
+            background-color: #FFFF;
+            padding: 9px 16px;
+            font-size: 14px;
+            border-radius: 12px;
+            font-weight: 700;
+            
+        }
+        .icons {
+            display: flex;
+
+            .deleteIcon {
+                margin-right: 24px;
+            }
+        }
+}

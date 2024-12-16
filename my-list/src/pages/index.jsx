@@ -1,26 +1,27 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import Ascending from '../icons/Ascending.jsx'
-import Delete from '../icons/Delete.jsx'
+import Card from '../components/ss/Card/index.jsx'
+import Toast from '../components/ss/Toast/index.jsx'
+import EmptyState from '../components/EmptyState/index.jsx'
+import DefaultHeader from '../components/DefaultHeader/index.jsx'
+import RemoveHeader from '../components/RemoveItems/index.jsx'
+import LoadingLottie from '../components/LoadingLottie/index.jsx'
 import './style.css'
-import Card from '../components/Card/Card/index.jsx'
-import { use } from 'react'
-import Toast from '../components/Card/Toast/index.jsx'
-import Descending from '../icons/Descending.jsx'
-import EmptyState from '../components/Card/EmptyState/index.jsx'
 
 export default function MyList () {
   const [data, setData] = useState([])
-  const [sort, setSort] = useState('Ascending')
+  const [isLoading, setIsLoading] = useState(false)
   const [openRemoveTab, setOpenRemoveTab] = useState(false)
   const [selectedIds, setSelectedIds] = useState([])
   const [showToast, setShowToast] = useState(false)
   const fetchData = async () => {
+    setIsLoading(true)
     try {
       const response = await axios.get('https://www.namava.ir/api/v2.0/post-groups/1263/medias?pi=1&ps=20')
       const dataArray = response?.data?.result
       setData(dataArray)
+      setIsLoading(false)
     } catch (error) {
       console.error('Error fetching data:', error)
     }
@@ -29,27 +30,8 @@ export default function MyList () {
   useEffect(() => {
     fetchData()
   }, [])
-  
   console.log(data)
 
-  const handleSort = () => {
-    const sortedData = data.slice().reverse()
-    sort === 'Ascending' ? setSort('Descending') : setSort('Ascending')
-    console.log("reversed :",sortedData)
-    setData(sortedData)
-  }
-  const handleOpenRemoveTab = () => {
-    const currRemoveState = !openRemoveTab
-    setOpenRemoveTab(currRemoveState)
-    if (openRemoveTab) setSelectedIds([])
-  }
-  const removeItems = () => {
-    const currData = data.filter((item) => {
-      return !selectedIds.includes(item.id)
-    })
-    handleOpenRemoveTab()
-    setData(currData)
-  }
   const handleSelectCard = (id) => {
     if (openRemoveTab) {
       const isSelected = selectedIds.includes(id)
@@ -69,42 +51,22 @@ export default function MyList () {
     }, 4000)
   }
 
+  if ((data.length) === 0 && !isLoading) return <EmptyState />
+  if (isLoading || data.length === 0) return <LoadingLottie />
   return (
     <div className='myList'>
       {<Toast showToast={showToast} />}
-      {!openRemoveTab &&
-        <header>
-          <div className="title">
-                لیست من
-          </div>
-          <div className="icons">
-            <div className='sortIcon' onClick={() => handleSort()}>
-              {sort === 'Ascending' ? <Ascending /> : <Descending />} 
-            </div>
-            <div className='deleteIcon' onClick={handleOpenRemoveTab}>
-              <Delete />
-            </div>
-          </div>
-        </header>
-      }
-      {openRemoveTab &&
-        <header>
-          <div className="titleText">
-            محتواهای مورد نظر خود را برای حذف از لیست انتخاب کنید.
-          </div>
-          <div className="icons">
-            <div className={`deleteItems ${selectedIds.length ? 'red' : ''}`}>
-              <div className='deleteIcon' onClick={removeItems}>
-                <Delete />
-              </div>
-              <span className="deleteText">حذف</span>
-            </div>
-            <div className="cancel" onClick={handleOpenRemoveTab}>
-              <span className="icon">&times;</span>
-              <span className="cancelText">لغو</span>
-            </div>
-          </div>
-        </header>
+      {!openRemoveTab ? 
+        <DefaultHeader
+          data={data}
+          setData={setData}
+          setOpenRemoveTab={setOpenRemoveTab} /> :
+        <RemoveHeader
+          data={data}
+          setData={setData}
+          setOpenRemoveTab={setOpenRemoveTab}
+          selectedIds={selectedIds}
+          setSelectedIds={setSelectedIds} />
       }
       {
         <ul className="container">
@@ -120,15 +82,11 @@ export default function MyList () {
                     imageUrl={item?.imageUrl}
                     isSelected={selectedIds.includes(item.id) ? 'selected' : ''}
                   />
-    
                 </li>
               )
             })
           }
         </ul>
-      }
-      {(data.length) === 0 &&
-        <EmptyState />
       }
     </div>
   )

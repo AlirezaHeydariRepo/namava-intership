@@ -1,6 +1,6 @@
 import React from 'react'
+import EmptyStateIcon from '../../icons/EmptyStateIcon'
 import './style.css'
-import EmptyStateIcon from '../../../icons/EmptyStateIcon'
 
 export default function EmptyState () {
   return (

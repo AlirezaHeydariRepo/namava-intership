@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import './style.css'
 import Select from '../../../icons/Select'
+import './style.css'
+
 Card.propTypes = {
   imageUrl: PropTypes.string,
   caption: PropTypes.string,

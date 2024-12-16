@@ -1,7 +1,7 @@
 import React from 'react'
-import './style.css'
 import PropTypes from 'prop-types'
 import Warning from '../../../icons/Warning'
+import './style.css'
 
 Toast.propTypes = {
   showToast: PropTypes.bool,
